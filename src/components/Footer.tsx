@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="py-8 bg-navy-dark text-white">
+    <footer className="py-8 bg-navy-dark/90 backdrop-blur-md text-white">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
@@ -17,7 +17,7 @@ const Footer = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-white/80 hover:text-white transition-colors duration-200 text-sm"
+                className="text-white/60 hover:text-white transition-colors duration-200 text-sm"
               >
                 {item}
               </a>

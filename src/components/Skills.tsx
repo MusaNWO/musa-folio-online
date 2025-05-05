@@ -24,7 +24,10 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="section-padding bg-secondary">
+    <section id="skills" className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-navy/5"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-navy/10 rounded-full blur-[80px] -z-10"></div>
+      
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">My Skills</h2>
@@ -36,11 +39,11 @@ const Skills = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div key={index} className="glass-card p-8 hover-lift">
               <h3 className="text-xl font-semibold mb-6 text-navy">{category.title}</h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
-                  <Badge key={skillIndex} variant="outline" className="bg-secondary text-foreground px-3 py-1">
+                  <Badge key={skillIndex} variant="outline" className="bg-white/50 backdrop-blur-sm text-foreground px-3 py-1">
                     {skill}
                   </Badge>
                 ))}

@@ -38,7 +38,11 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="section-padding">
+    <section id="projects" className="section-padding relative">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-40 right-20 w-80 h-80 bg-navy/5 rounded-full blur-[100px]"></div>
+      </div>
+      
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">My Projects</h2>
@@ -50,10 +54,10 @@ const Projects = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden border border-border/50 hover:shadow-md transition-shadow duration-300">
-              <div className="aspect-video bg-muted">
+            <Card key={index} className="glass-card overflow-hidden border-0 hover-lift">
+              <div className="aspect-video bg-navy/10 backdrop-blur-sm">
                 {/* Replace with actual image */}
-                <div className="w-full h-full flex items-center justify-center bg-navy-light/10">
+                <div className="w-full h-full flex items-center justify-center">
                   <span className="text-navy">Image Placeholder</span>
                 </div>
               </div>
@@ -66,7 +70,7 @@ const Projects = () => {
                 <p className="text-foreground/70 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="secondary" className="text-xs">
+                    <Badge key={tagIndex} variant="secondary" className="text-xs bg-white/50 backdrop-blur-sm">
                       {tag}
                     </Badge>
                   ))}
